@@ -8,7 +8,8 @@ package Arrays;
 //    }
 //}
 
-public class arraysBasics_01 {
+public class
+arraysBasics_01 {
     public static void main(String[] args) {
         int [] arr = new int[5];
         arr[0] = 1;

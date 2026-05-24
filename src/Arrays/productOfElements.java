@@ -2,7 +2,8 @@ package Arrays;
 
 import java.util.Scanner;
 
-public class productOfElements {
+public class
+productOfElements {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
