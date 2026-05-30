@@ -1,0 +1,141 @@
+----------------------------------------------------------------
+1. SPACE COMPLEXITY KYA HAI?
+----------------------------------------------------------------
+
+Space Complexity = Humara code kitni MEMORY use karta hai
+                   jab input badhta hai.
+
+Real Life Example:
+  - Chef jo saari ingredients pehle table pe rakh le  -> Zyada space
+  - Chef jo ek ek ingredient use kare aur rakh de     -> Kam space
+
+
+IMPORTANT:
+  Space complexity mein hum sirf EXTRA space count karte hain
+  jo humne khud use ki — input array ki space count NAHI hoti.
+  Isse AUXILIARY SPACE kehte hain.
+
+----------------------------------------------------------------
+2. SPACE COMPLEXITY KE TYPES
+----------------------------------------------------------------
+
+  Input Space     -> Jo data tumhe diya gaya (array, string, etc.)
+  Auxiliary Space -> Jo extra space tumne apne code mein use ki
+  Total Space     -> Input + Auxiliary
+
+
+----------------------------------------------------------------
+3. COMPLEXITIES EXPLAINED
+----------------------------------------------------------------
+
+O(1) — Constant Space
+  -> Chahe input kitna bhi bada ho, extra space same rehti hai.
+  -> Example: Sirf kuch variables banana (int max, int count)
+  -> Chahe array 10 ka ho ya 10 lakh ka — space hamesha O(1)
+
+
+O(n) — Linear Space
+  -> Input ke saath saath extra space bhi badhti hai.
+  -> Example: n size ka naya array banana
+  -> Example: n elements wala HashMap banana
+  -> Array 100 ka → 100 extra space → O(n)
+
+O(n) — Recursion Stack Space  [MOST FORGOTTEN!]
+  -> Recursion mein har call stack pe store hoti hai!
+  -> Example: factorial(5) → 5 calls stack pe → O(n) space
+  -> Jab bhi recursion likho — stack depth zaroor calculate karo!
+
+  factorial(5)
+    - factorial(4)
+      - factorial(3)
+        - factorial(2)
+          - factorial(1)   ← n calls = O(n) stack space
+
+O(n²) — Quadratic Space
+  → 2D array / matrix banate waqt
+  → Example: int[][] dp = new int[n][n]
+  → n = 100 → 10,000 cells = O(n²)
+
+----------------------------------------------------------------
+4. TIME vs SPACE TRADEOFF  [MOST IMPORTANT!]
+----------------------------------------------------------------
+
+  Zyada speed chahiye?   → Zyada memory use karo
+  Zyada memory bachani?  → Thoda slow hoga code
+
+Real Example — Array mein duplicate dhundho:
+
+  APPROACH 1: Nested Loop
+    Time  = O(n²)   [slow]
+    Space = O(1)    [no extra memory]
+    -> Har element ko baaki sab se compare karo
+
+  APPROACH 2: HashSet
+    Time  = O(n)    [fast]
+    Space = O(n)    [extra memory use ki]
+    -> HashSet mein store karo, contains() se check karo
+
+
+----------------------------------------------------------------
+5. SPACE COMPLEXITY KAISE FIND KAREIN? (RULES)
+----------------------------------------------------------------
+
+Rule 1: Sirf variables = O(1)
+  int a = 5;
+  int b = 10;
+  → O(1)  [chahe n kuch bhi ho]
+
+Rule 2: n size ka array/list = O(n)
+  int[] arr = new int[n];
+  ArrayList<Integer> list = new ArrayList<>();
+  → O(n)
+
+Rule 3: n×m matrix = O(n×m)
+  int[][] dp = new int[n][m];
+  → O(n×m)
+
+Rule 4: Recursion depth = stack space
+  Depth n tak jaaye     → O(n) stack space
+  Depth log n tak jaaye → O(log n) stack space
+
+Rule 5: HashMap/HashSet with n elements = O(n)
+  HashMap<Integer, Integer> map = new HashMap<>();
+  → n elements daale → O(n) space
+
+----------------------------------------------------------------
+6. COMMON DATA STRUCTURES KI SPACE COMPLEXITY
+----------------------------------------------------------------
+
+  Array (size n)        → O(n)
+  2D Array (n×m)        → O(n·m)
+  HashMap (n entries)   → O(n)
+  HashSet (n entries)   → O(n)
+  Stack (n elements)    → O(n)
+  Queue (n elements)    → O(n)
+  Recursion (depth d)   → O(d)
+  Linked List (n nodes) → O(n)
+
+
+----------------------------------------------------------------
+7. SPACE COMPLEXITY CHEAT SHEET
+----------------------------------------------------------------
+
+  O(1)       → Sirf variables. Best possible.
+  O(log n)   → Recursive binary search stack.
+  O(n)       → Extra array, HashMap, recursion depth n.
+  O(n log n) → Merge sort (stack + temp array combined).
+  O(n²)      → 2D DP table, n×n matrix.
+
+
+----------------------------------------------------------------
+8. KEY TAKEAWAYS
+----------------------------------------------------------------
+
+  1. Space complexity = EXTRA memory, input count nahi hoti
+  2. Recursion = hidden stack space — BHOOLNA MAT!
+  3. Time aur Space mein hamesha TRADEOFF hota hai
+  4. HashMap use karna = time ghata, space badha
+
+================================================================
+                  END OF SPACE COMPLEXITY
+================================================================

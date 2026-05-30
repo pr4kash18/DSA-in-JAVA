@@ -1,0 +1,158 @@
+----------------------------------------------------------------
+1. TIME COMPLEXITY KYA HAI?
+----------------------------------------------------------------
+
+Time Complexity = Humara code kitna kaam karta hai jab input badhta hai.
+
+NOTE: Yeh actual seconds nahi hoti.
+      Yeh count karti hai kitne OPERATIONS/STEPS execute hote hain.
+
+Real Life Example:
+  - Dictionary mein word page by page dhundhna   → Slow (bad complexity)
+  - Dictionary mein alphabetical order use karna → Fast (good complexity)
+
+----------------------------------------------------------------
+2. BIG O NOTATION
+----------------------------------------------------------------
+
+Big O = Humare code ki efficiency ka "grade"
+
+Order (Best to Worst):
+  O(1) > O(log n) > O(n) > O(n log n) > O(n²) > O(2ⁿ) > O(n!)
+  BEST                                                     WORST
+
+----------------------------------------------------------------
+3. COMPLEXITIES EXPLAINED
+----------------------------------------------------------------
+
+O(1) — Constant Time
+  - Input chahe kitna bhi bada ho — hamesha 1 step.
+  -example: Any loop jiska value hume diya rahta hai means constant time loop chalta hai.
+  
+  
+O(log n) — Logarithmic Time
+  - Har step mein problem HALF ho jaati hai.
+  - Example: Binary Search
+  - 1000 elements = sirf 10 steps!
+
+
+O(n) — Linear Time
+  - Har element ko ek baar check karna padta hai.
+  - Example: Array mein max element dhundhna
+  - Real life: Class mein har student ka naam pucho
+  
+
+O(n log n) — Linearithmic Time
+  → Sorting algorithms ka standard. Acceptable in interviews.
+  → Example: Merge Sort, Arrays.sort()
+  → Real life: Library books ko smart method se sort karna
+
+
+O(n²) — Quadratic Time
+  → Loop ke andar loop. AVOID karo jab possible ho!
+  → Example: Bubble Sort (nested loops)
+  → Real life: Har student ko class ke har doosre student se milana
+  
+
+O(2ⁿ) — Exponential Time
+  → Bahut dangerous. Sirf small inputs pe chalega.
+  → Example: Fibonacci naive recursion
+  → n=50 pe TRILLION operations!
+  
+
+O(n!) — Factorial Time
+  → Worst possible. Sirf theoretical problems mein.
+  → Example: All permutations try karna
+  → 10 items = 36 lakh arrangements!
+
+
+----------------------------------------------------------------
+4. TIME COMPLEXITY KAISE FIND KAREIN? (RULES)
+----------------------------------------------------------------
+
+
+Rule 1: Single loop = O(n)
+  for (int i = 0; i < n; i++) { }
+  → O(n)
+
+
+Rule 2: Nested loop = O(n²)
+  for (int i = 0; i < n; i++) {
+      for (int j = 0; j < n; j++) { }
+  }
+  → O(n²)
+
+
+Rule 3: Loop jo half karta hai = O(log n)
+  while (n > 1) { n = n / 2; }
+  → O(log n)
+
+
+Rule 4: Do alag loops = O(n) + O(n) = O(2n) = O(n)
+  for (int i = 0; i < n; i++) { }   // O(n)
+  for (int j = 0; j < n; j++) { }   // O(n)
+  → O(n)   [constants ignore karte hain]
+
+
+Rule 5: Constants hamesha ignore karo!
+  O(2n)  → O(n)
+  O(500) → O(1)
+  O(3n²) → O(n²)
+
+----------------------------------------------------------------
+5. BEST / AVERAGE / WORST CASE
+----------------------------------------------------------------
+
+Example: Array mein ek number dhundho [10, 20, 30, 40, 50]
+
+  BEST CASE     → Pehle mein mil gaya  (target = 10)    → O(1)
+  AVERAGE CASE  → Beech mein mila      (target = 30)    → O(n)
+  WORST CASE    → Last mein mila       (target = 50)    → O(n)
+
+
+----------------------------------------------------------------
+6. IDEAL TIME COMPLEXITY — PROBLEM TYPE WISE
+----------------------------------------------------------------
+
+  Array/String traversal   → O(n)         Example: Max element
+  Searching (sorted array) → O(log n)     Example: Binary Search
+  Sorting                  → O(n log n)   Example: Merge Sort
+  HashMap problems         → O(n)         Example: Frequency count
+  Matrix problems          → O(n²)        Example: 2D traversal
+  DP problems              → O(n) / O(n²) Example: Fibonacci with memo
+  Graph problems           → O(V + E)     Example: BFS / DFS
+
+
+----------------------------------------------------------------
+7. PROBLEM OPTIMIZE KAISE KAREIN? (MINDSET)
+----------------------------------------------------------------
+
+  Step 1 → Brute force socho pehle (koi bhi solution)
+  Step 2 → Uski complexity nikalo
+  Step 3 → Poocho — "Kya koi repeated kaam ho raha hai?"
+  Step 4 → Kya extra memory use karke time bacha sakte hain?
+  Step 5 → Kaunsa pattern fit hota hai?
+  Step 6 → Optimize karo!
+
+COMMON OPTIMIZATION TRICKS:
+  Nested loops (O(n²)) dikh raha hai     → HashMap use karo      → O(n)
+  Sorted array + search                  → Binary Search          → O(log n)
+  Subarray/Substring problem             → Sliding Window         → O(n)
+  Repeated subproblems                   → DP / Memoization       → O(n)
+  Left + Right traversal                 → Two Pointer            → O(n)
+
+
+----------------------------------------------------------------
+8. KEY TAKEAWAYS
+----------------------------------------------------------------
+
+  1. Time complexity = steps count, seconds NAHI
+  2. Hamesha WORST CASE bolo interviews mein
+  3. Constants ignore karo — O(2n) = O(n)
+  4. FAANG target: O(n) ya O(n log n) for most problems
+  5. O(n²) = red flag → hamesha optimize karne ki koshish karo
+  6. Optimization = pattern pehchano (Hashing, Two Pointer, etc.)
+
+================================================================
+                        END OF TIME COMPLEXITY
+================================================================
